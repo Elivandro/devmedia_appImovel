@@ -17,7 +17,7 @@ class Imovel extends Model
         'number',
         'postal_code',
         'city',
-        'country',
+        'state',
         'price',
         'roomQty',
         'type',
