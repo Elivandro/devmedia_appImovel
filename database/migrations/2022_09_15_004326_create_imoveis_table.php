@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('number');
             $table->string('postal_code');
             $table->string('city');
-            $table->string('country');
+            $table->string('state');
             $table->integer('price');
             $table->integer('roomQty');
             $table->enum('type', ['apartament', 'house', 'kitnet']);
