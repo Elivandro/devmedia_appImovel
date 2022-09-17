@@ -47,6 +47,12 @@ class ImovelController extends Controller
 
     public function destroy($id)
     {
-        //
+        if(!$imovel = $this->imoveis->find($id))
+            return redirect()->back()->withErrors('message', 'Imóvel não encontrado.');
+
+        $imovel->delete();
+
+        $imoveis = $this->imoveis->all();
+        return redirect()->route('imovel.index', compact('imoveis'))->with('success', 'Imóvel deletado com sucesso.');
     }
 }
