@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Imovel;
-use Illuminate\Http\Request;
+use App\Http\Requests\createUpdateImovelRequest;
 
 class ImovelController extends Controller
 {
@@ -15,7 +15,8 @@ class ImovelController extends Controller
     }
     public function index()
     {
-        //
+        $imoveis = $this->imoveis->paginate(5);
+        return view('imoveis.index', compact('imoveis'));
     }
 
     public function create()
@@ -23,10 +24,10 @@ class ImovelController extends Controller
         return view('imoveis.create');
     }
 
-    public function store(Request $request)
+    public function store(createUpdateImovelRequest $request)
     {
         $this->imoveis->create($request->all());
-        return redirect()->route('imoveis.index')->with('sucess', 'Imóvel cadastrado com sucesso.');
+        return redirect()->route('imovel.index')->with('success', 'Imóvel cadastrado com sucesso.');
     }
 
     public function show($id)
@@ -39,7 +40,7 @@ class ImovelController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update(createUpdateImovelRequest $request, $id)
     {
         //
     }
