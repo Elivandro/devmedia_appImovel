@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('state');
             $table->integer('price');
             $table->integer('roomQty');
-            $table->enum('type', ['apartament', 'house', 'kitnet']);
-            $table->enum('purpose', ['sale', 'location']);
+            $table->enum('type', ['1', '2', '3', '4']);
+            $table->enum('purpose', ['1', '2']);
             $table->timestamps();
         });
     }
