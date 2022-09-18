@@ -6,7 +6,7 @@
         <div class="card card-default">
             <div class="card-header">
                 <ol class="breadcrumb m-0 p-0">
-                    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('imovel.index') }}">Imoveis</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('imovel.index') }}" class="text-decoration-none">Imoveis</a></li>
                     <li class="breadcrumb-item active">Adicionar</li>
                 </ol>
             </div>
