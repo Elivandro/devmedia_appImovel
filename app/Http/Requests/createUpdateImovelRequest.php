@@ -21,8 +21,8 @@ class createUpdateImovelRequest extends FormRequest
             'postal_code' => 'required | numeric',
             'city' => 'required | string',
             'state' => 'required | string',
-            'price' => 'required | integer',
-            'roomQty' => 'required | integer',
+            'price' => 'required | numeric',
+            'roomQty' => 'required | numeric',
             'type'  => 'required | integer',
             'purpose' => 'required | integer',
         ];
