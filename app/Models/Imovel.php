@@ -22,10 +22,16 @@ class Imovel extends Model
         'roomQty',
         'type',
         'purpose',
+        'user_id',
         'created_at',
         'updated_at',
     ];
 
     protected $table = 'imoveis';
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }
