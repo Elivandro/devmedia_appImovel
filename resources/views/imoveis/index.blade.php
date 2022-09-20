@@ -60,16 +60,15 @@
                             @endswitch
                             <td>{{ formatMoney($imovel->price) }}</td>
                             <td>
-                                <form action="{{ route('imovel.destroy', $imovel->id) }}" method="post" id="delete-form">
-                                    @method('DELETE')
-                                    @csrf
                                     <a href="{{ route('imovel.show', $imovel->id) }}" class="btn btn-outline-primary btn-sm">
                                         <i class="fa-solid fa-magnifying-glass-plus fa-lg"></i>
                                     </a>
                                     <a href="{{ route('imovel.edit', $imovel->id) }}" class="btn btn-outline-primary btn-sm">
                                         <i class="fa-solid fa-pencil fa-lg"></i>
                                     </a>
-                                    <button class="btn btn-outline-danger btn-sm" onclick="return confirm('Você tem certeza de que deseja deletar este registro?')"><i class="fa-solid fa-trash fa-lg"></i></button>
+                                    <a href="{{ route('imovel.delete',$imovel->id) }}" class="btn btn-outline-danger btn-sm">
+                                        <i class="fa-solid fa-trash fa-lg"></i>
+                                    </a>
                                 </form>
                             </td>
                         </tr>
