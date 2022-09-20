@@ -4,10 +4,13 @@
 @section('content')
     <section>
         <div class="card card-default">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-between">
                 <ol class="breadcrumb m-0 p-0">
                     <li class="breadcrumb-item" aria-current="page"><a href="{{ route('imovel.index') }}" class="text-decoration-none">Imoveis</a></li>
                     <li class="breadcrumb-item active">Editar</li>
+                </ol>
+                <ol class="breadcrumb m-0 p-0">
+                    <a href="{{ route('imovel.create') }}" class="btn btn-primary btn-sm" data-toggle="collapse">Adicionar</a>
                 </ol>
             </div>
             <div class="card-body">
