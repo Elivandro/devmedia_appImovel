@@ -15,7 +15,7 @@
             </div>
             <div class="card-body">
                 <div class="row justify-content-evenly mx-auto">
-                    <div class="card" style="width: 49.2%;">
+                    <div class="card border-0" style="width: 49.2%;">
                         <div class="card-header">
                             <h4>Sobre o imóvel</h4>
                         </div>
@@ -50,11 +50,8 @@
                                 @endswitch
                                 <li class="list-group-item">{{ $imovel->description }}</li>                                        
                         </ul>
-                        <div class="card-footer">
-                            Criação: {{ formatDateTime($imovel->created_at) }}
-                        </div>
                     </div>
-                    <div class="card" style="width: 49.2%;">
+                    <div class="card border-0" style="width: 49.2%;">
                         <div class="card-header">
                             <h4>Endereço</h4>
                         </div>
@@ -67,7 +64,8 @@
                             <li class="list-group-item">Estado: {{ $imovel->state }}</li>
                         </ul>
                         <div class="card-footer">
-                            Ultima atualização: {{ formatDateTime($imovel->updated_at) }}
+                            <li class="list-group-item">Criação: {{ formatDateTime($imovel->created_at) }}</li>
+                            <li class="list-group-item">Ultima atualização: {{ formatDateTime($imovel->updated_at) }}</li>
                         </div>
                     </div>
                 </div>
