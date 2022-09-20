@@ -11,7 +11,7 @@
                 </ol>
             </div>
             <div class="card-body">
-                <form method="post" action="{{ route('imovel.store') }}">
+                <form method="post" action="{{ route('imovel.store', Auth::User()->id) }}">
                     @csrf
                     <h4>Dados do imóvel</h4>
                     <hr/>
@@ -39,7 +39,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="roomqty">Quantidade de quartos</label>
-                                <input type="number" class="form-control  {{ $errors->has('roomQty') ? 'border border-danger' : 'border border-primary' }}" id="roomqty" name="roomQty" placeholder="Quantidade de quartos" min="1" required/>
+                                <input type="number" class="form-control  {{ $errors->has('roomQty') ? 'border border-danger' : 'border border-primary' }}" id="roomqty" name="roomQty" placeholder="Quantidade de quartos" min="0" required/>
                                 @if($errors->has('roomQty'))
                                     <span class="text-danger">
                                         <strong>{{ $errors->first('roomQty') }}</strong>
