@@ -21,6 +21,9 @@ return new class extends Migration
             $table->integer('roomQty');
             $table->enum('type', ['1', '2', '3', '4']);
             $table->enum('purpose', ['1', '2']);
+            $table->foreignId('user_id')->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
