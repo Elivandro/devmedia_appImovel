@@ -22,11 +22,11 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             @switch($imovel->purpose)
-                                @case(1)
+                                @case('Venda')
                                     <li class="list-group-item">Propósito: Venda</li>
                                     @break
-                                @case(2)
-                                    <li class="list-group-item">Locação</li>
+                                @case('Aluguel')
+                                    <li class="list-group-item">Propósito: Aluguel</li>
                                     @break
                                 @default
                                     <li class="list-group-item">Propósito: Não encontrado</li>
@@ -34,16 +34,16 @@
                             <li class="list-group-item">Preço: {{ formatMoney($imovel->price) }}</li>
                             <li class="list-group-item">Quantidade de quartos: {{ $imovel->roomQty }}</li>
                             @switch($imovel->type)
-                                @case(1)
+                                @case('Apartamento')
                                     <li class="list-group-item">Tipo: Apartamento</li>
                                     @break
-                                @case(2)
+                                @case('Casa')
                                     <li class="list-group-item">Tipo: Casa</li>
                                     @break
-                                @case(3)
+                                @case('Kitnet')
                                     <li class="list-group-item">Tipo: Kitnet</li>
                                     @break
-                                @case(4)
+                                @case('Lote')
                                     <li class="list-group-item">Tipo: Lote</li>
                                     @break
                                 @default

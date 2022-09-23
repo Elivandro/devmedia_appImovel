@@ -33,52 +33,51 @@
                             <td>{{ $imovel->city }}</td>
                             <td>{{ $imovel->state }}</td>
                             @switch($imovel->type)
-                                @case(1)
+                                @case('Apartamento')
                                     <td>Apartamento</td>
                                     @break
-                                @case(2)
+                                @case('Casa')
                                     <td>Casa</td>
                                     @break
-                                @case(3)
-                                    <td">Kitnet</td>
+                                @case('Kitnet')
+                                    <td>Kitnet</td>
                                     @break
-                                @case(4)
+                                @case('Lote')
                                     <td>Lote</td>
                                     @break
                                 @default
                                     <td>Não encontrado</td>
                             @endswitch
                             @switch($imovel->purpose)
-                                @case(1)
+                                @case('Venda')
                                     <td>Venda</td>
                                     @break
-                                @case(2)
-                                    <td>Locação</td>
+                                @case('Aluguel')
+                                    <td>Aluguel</td>
                                     @break
                                 @default
                                     <td>Não encontrado</td>
                             @endswitch
                             <td>{{ formatMoney($imovel->price) }}</td>
                             <td>
-                                    <a href="{{ route('imovel.show', $imovel->id) }}" class="btn btn-outline-primary btn-sm">
-                                        <i class="fa-solid fa-magnifying-glass-plus fa-lg"></i>
-                                    </a>
-                                    <a href="{{ route('imovel.edit', $imovel->id) }}" class="btn btn-outline-primary btn-sm">
-                                        <i class="fa-solid fa-pencil fa-lg"></i>
-                                    </a>
-                                    <a href="{{ route('imovel.delete',$imovel->id) }}" class="btn btn-outline-danger btn-sm">
-                                        <i class="fa-solid fa-trash fa-lg"></i>
-                                    </a>
-                                </form>
+                                <a href="{{ route('imovel.show', $imovel->id) }}" class="btn btn-outline-primary btn-sm">
+                                    <i class="fa-solid fa-magnifying-glass-plus fa-lg"></i>
+                                </a>
+                                <a href="{{ route('imovel.edit', $imovel->id) }}" class="btn btn-outline-primary btn-sm">
+                                    <i class="fa-solid fa-pencil fa-lg"></i>
+                                </a>
+                                <a href="{{ route('imovel.delete',$imovel->id) }}" class="btn btn-outline-danger btn-sm">
+                                    <i class="fa-solid fa-trash fa-lg"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4">
+                        <td colspan="8">
                             <div class="pagination justify-content-center">
-                                {{ $imoveis->links('pagination::bootstrap-5')}}
+                                {{ $imoveis->links('pagination::bootstrap-4')}}
                             </div>
                         </td>
                     </tr>

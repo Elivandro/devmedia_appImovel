@@ -58,10 +58,10 @@
                                 <label for="type">Tipo de imóvel</label>
                                 <select class="form-control {{ $errors->has('roomQty') ? 'border border-danger' : 'border border-primary' }}" id="type" name="type" required>
                                     <option>Selecione</option>
-                                    <option value="1"{{ $imovel->type == '1' ? 'selected' : '' }}>Apartamento</option>
-                                    <option value="2"{{ $imovel->type == '2' ? 'selected' : '' }}>Casa</option>
-                                    <option value="3"{{ $imovel->type == '3' ? 'selected' : '' }}>Kitnet</option>
-                                    <option value="4"{{ $imovel->type == '4' ? 'selected' : '' }}>Lote</option>
+                                    <option value="1"{{ $imovel->type == 'Apartamento' ? 'selected' : '' }}>Apartamento</option>
+                                    <option value="2"{{ $imovel->type == 'Casa' ? 'selected' : '' }}>Casa</option>
+                                    <option value="3"{{ $imovel->type == 'Kitnet' ? 'selected' : '' }}>Kitnet</option>
+                                    <option value="4"{{ $imovel->type == 'Lote' ? 'selected' : '' }}>Lote</option>
                                 </select>
                                 @if($errors->has('type'))
                                     <span class="text-danger">
@@ -75,8 +75,8 @@
                                 <label for="purpose">Propósito</label>
                                 <select class="form-control {{ $errors->has('purpose') ? 'border border-danger' : 'border border-primary' }}" id="purpose" name="purpose" required>
                                     <option>Selecione</option>
-                                    <option value="1"{{ $imovel->purpose == '1' ? 'selected' : '' }}>Venda</option>
-                                    <option value="2"{{ $imovel->purpose == '2' ? 'selected' : '' }}>Locação</option>
+                                    <option value="1"{{ $imovel->purpose == 'Venda' ? 'selected' : '' }}>Venda</option>
+                                    <option value="2"{{ $imovel->purpose == 'Aluguel' ? 'selected' : '' }}>Aluguel</option>
                                 </select>
                                 @if($errors->has('purpose'))
                                     <span class="text-danger">

@@ -72,7 +72,7 @@
                                 <select class="form-control {{ $errors->has('purpose') ? 'border border-danger' : 'border border-primary' }}" id="purpose" name="purpose" required>
                                     <option>Selecione</option>
                                     <option value="1">Venda</option>
-                                    <option value="2">Locação</option>
+                                    <option value="2">Alugel</option>
                                 </select>
                                 @if($errors->has('purpose'))
                                     <span class="text-danger">
