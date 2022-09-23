@@ -1,18 +1,24 @@
 <section>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container container-fluid">
-            <a href="{{ route('todos.imoveis') }}" class="navbar-brand active" aria-current="page">Ínicio</a>
+            <a href="{{ route('page.index') }}" class="navbar-brand active" aria-current="page">Ínicio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#">Apartamentos</a>
-                    <a class="nav-link" href="#">Casas</a>
-                    <a class="nav-link" href="#">Kitnets</a>
-                    <a class="nav-link" href="#">Lotes</a>
+                    <a class="nav-link" href="{{ route('page.filter', 'Apartamento') }}">Apartamentos</a>
+                    <a class="nav-link" href="{{ route('page.filter', 'Casa') }}">Casas</a>
+                    <a class="nav-link" href="{{ route('page.filter', 'Kitnet') }}">Kitnets</a>
+                    <a class="nav-link" href="{{ route('page.filter', 'Lote') }}">Lotes</a>
                 </div>
-                <ul class="navbar-nav ms-auto">
+                <form action="{{ route('page.index') }}" method="GET">
+                    <div class="input-group">
+                        <input type="search" name="search" class="form-control rounded" placeholder="digite sua busca"/>
+                        <button type="submit" class="btn btn-outline-primary btn-sm">Buscar</button>
+                    </div>
+                </form>
+                <ul class="navbar-nav">
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -48,7 +54,8 @@
                             </div>
                         </li>
                     @endguest
-            </ul>
+                </ul>
+            </div>
         </div>
     </nav>
 </section>
