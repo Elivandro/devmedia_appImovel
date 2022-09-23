@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('state');
             $table->integer('price');
             $table->integer('roomQty');
-            $table->enum('type', ['1', '2', '3', '4']);
-            $table->enum('purpose', ['1', '2']);
+            $table->enum('type', ['Apartamento', 'Casa', 'Kitnet', 'Lote']);
+            $table->enum('purpose', ['Venda', 'Aluguel']);
             $table->foreignId('user_id')->constrained('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
