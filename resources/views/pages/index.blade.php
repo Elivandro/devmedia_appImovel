@@ -3,9 +3,9 @@
 
 @section('content')
 <section>
-    <div class="row justify-content-between">
+    <div class="row justify-content-start">
         @foreach($imoveis as $imovel)
-        <div class="card mb-3" style="width: 26rem;">
+        <div class="card mb-3 mx-2" style="width: 26rem;">
                 <a href="{{ route('page.show', $imovel->id) }}" class="text-decoration-none mx-3">
                     <div class="card-header">
                         <li class="list-group-item">{{ $imovel->description }}</li>                                        
