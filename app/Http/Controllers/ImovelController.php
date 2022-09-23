@@ -20,7 +20,8 @@ class ImovelController extends Controller
     public function index()
     {
         $user = $this->users->find(Auth::user()->id);
-        $imoveis = $user->Imoveis()->paginate(5);
+        $imoveis = $user->Imoveis()->paginate(10);
+
         return view('imoveis.index', compact('imoveis'));
     }
 
