@@ -29,6 +29,20 @@ class Imovel extends Model
 
     protected $table = 'imoveis';
 
+    public function getImoveis(string $search = null)
+    {
+        $imoveis = $this->where(function ($query) use ($search) {
+            if($search){
+                $query->where('city', 'LIKE',  "%{$search}%");
+                $query->orWhere('state', 'LIKE', "%{$search}%");
+                $query->orWhere('price', 'LIKE', "%{$search}%");
+                $query->orWhere('purpose', 'LIKE', "%{$search}%");
+            }
+        })->paginate(6);
+
+        return $imoveis;
+    }
+
     public function User()
     {
         return $this->belongsTo(User::class);
