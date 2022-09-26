@@ -6,6 +6,23 @@
     <div class="row justify-content-start">
         @foreach($imoveis as $imovel)
         <div class="card mb-3 mx-2" style="width: 26rem;">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    @forelse($imovel->images as $image)
+                        <figure class="swiper-slide">
+                            <img src="{{ asset($image->image) }}" width="390px" height="480px">
+                        </figure>
+                    @empty
+                        <figure class="swiper-slide">
+                            <img src="{{ asset('assets/images/imoveis/no-image.png') }}" width="390px" height="480px" alt="sem imagem disponivel"/>
+                        </figure>
+                    @endforelse
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
                 <a href="{{ route('page.show', $imovel->id) }}" class="text-decoration-none mx-3">
                     <div class="card-header">
                         <li class="list-group-item">{{ $imovel->description }}</li>                                        
@@ -46,7 +63,7 @@
                     </div>
                 </a>
             </div>
-        @endforeach
+            @endforeach
     </div>
     <div class="d-flex justify-content-center pagination-container mb-5">
         {{ $imoveis->links('pagination::bootstrap-4')}}
