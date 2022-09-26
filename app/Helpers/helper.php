@@ -2,7 +2,7 @@
 
     function formatDateTime($dateTime)
     {
-        return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $dateTime)->format('d/m/Y - H:i');
+        return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $dateTime)->format('H:i:s - d/m/Y');
     }
 
     function formatPhoneNumber($phoneNumber)
