@@ -48,4 +48,8 @@ class Imovel extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function Images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }
